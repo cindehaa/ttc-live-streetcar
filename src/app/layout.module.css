@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+.root {
+  /* ── Orbital design tokens — dark mode (default) ─────── */
+  --orb-bg: #0c0c0e;
+  --orb-text: #dfe0e2;
+  --orb-muted: #757b8a;
+  --orb-accent: #2950bc;
+  --orb-accent-light: #587bda;
+  --orb-surface: hsla(224, 30%, 50%, 0.05);
+  --orb-surface-hover: hsla(224, 30%, 50%, 0.09);
+  --orb-border: hsla(224, 30%, 50%, 0.1);
+  --orb-success: #3cdd77;
+  --orb-warning: #f9ce1f;
+  --orb-error: #ef4343;
+  --orb-radius: 4px;
+  --orb-font: 'Space Grotesk', system-ui, sans-serif;
+  --orb-mono: 'Space Mono', monospace;
+  --orb-shadow: 0 2px 8px rgba(0, 0, 0, 0.45), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --orb-gap: 1.25rem;
+  --orb-card-padding: 1.5rem;
+
+  --color-bg: var(--orb-bg);
+  --color-text: var(--orb-text);
+  --color-text-muted: var(--orb-muted);
+  --color-accent: var(--orb-accent);
+  --color-surface: var(--orb-surface);
+  --color-surface-hover: var(--orb-surface-hover);
+  --color-border: var(--orb-border);
+
+  background-color: var(--orb-bg);
+  color: var(--orb-text);
+  font-family: var(--orb-font);
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Orbital light mode ──────────────────────────────────── */
+@media (prefers-color-scheme: light) {
+  .root {
+    --orb-bg: #f7f7f8;
+    --orb-text: #1c1d21;
+    --orb-muted: #6c707a;
+    --orb-accent: #203f92;
+    --orb-accent-light: #2548a7;
+    --orb-surface: hsla(224, 20%, 50%, 0.05);
+    --orb-surface-hover: hsla(224, 20%, 50%, 0.09);
+    --orb-border: hsla(224, 20%, 50%, 0.12);
+    --orb-success: #279b51;
+    --orb-warning: #cb850b;
+    --orb-error: #c91d1d;
+    --orb-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.07);
+  }
+}

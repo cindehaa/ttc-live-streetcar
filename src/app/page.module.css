@@ -1,0 +1,205 @@
+@keyframes livePulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes livePulseLoading {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: var(--orb-bg);
+  color: var(--orb-text);
+  font-family: var(--orb-font);
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  height: 48px;
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--orb-border);
+  background: var(--orb-bg);
+  box-shadow: 0 1px 0 var(--orb-border);
+}
+
+.topLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.01em;
+  color: var(--orb-text);
+}
+
+.divider {
+  color: var(--orb-border);
+  font-weight: 300;
+}
+
+.subtitle {
+  font-family: var(--orb-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--orb-muted);
+}
+
+.topRight {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.vehicleCount {
+  font-family: var(--orb-mono);
+  font-size: 0.7rem;
+  color: var(--orb-muted);
+  background: var(--orb-surface);
+  border: 1px solid var(--orb-border);
+  border-radius: 3px;
+  padding: 2px 7px;
+}
+
+.lastUpdate {
+  font-family: var(--orb-mono);
+  font-size: 0.7rem;
+  color: var(--orb-muted);
+}
+
+.errorBadge {
+  font-family: var(--orb-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  color: var(--orb-error);
+  background: hsla(0, 70%, 45%, 0.1);
+  border: 1px solid hsla(0, 70%, 45%, 0.35);
+  border-radius: var(--orb-radius);
+  padding: 2px 8px;
+}
+
+.liveChip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--orb-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--orb-success);
+  background: hsla(142, 65%, 40%, 0.08);
+  border: 1px solid hsla(142, 65%, 45%, 0.22);
+  border-radius: var(--orb-radius);
+  padding: 2px 8px 2px 6px;
+}
+
+.liveDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--orb-success);
+  animation: livePulse 2.4s ease-in-out infinite;
+}
+
+.liveLoading .liveDot {
+  animation: livePulseLoading 0.7s ease-in-out infinite;
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.mapArea {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.mapPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: #0c0c0e;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  height: 100%;
+  background: var(--orb-bg);
+  background-image:
+    linear-gradient(var(--orb-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--orb-border) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.emptyText {
+  font-family: var(--orb-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--orb-muted);
+  text-align: center;
+}
+
+.geoBtn {
+  font-family: var(--orb-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  color: var(--orb-accent-light);
+  background: none;
+  border: 1px solid var(--orb-border);
+  border-radius: var(--orb-radius);
+  padding: 3px 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.geoBtn:hover {
+  background: var(--orb-surface-hover);
+  border-color: var(--orb-accent-light);
+}
+
+@media (max-width: 640px) {
+  .subtitle,
+  .divider,
+  .vehicleCount,
+  .lastUpdate {
+    display: none;
+  }
+
+  .body {
+    flex-direction: column-reverse;
+  }
+
+  .mapArea {
+    flex: 1;
+    min-height: 0;
+  }
+}

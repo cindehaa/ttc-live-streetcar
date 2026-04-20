@@ -1,0 +1,30 @@
+/* Leaflet confirm popup (long-press location) */
+.ttc-confirm-popup .leaflet-popup-content-wrapper {
+  background: #1a1d27;
+  color: #e0e0e2;
+  border: 1px solid #2e3147;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.ttc-confirm-popup .leaflet-popup-tip {
+  background: #1a1d27;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

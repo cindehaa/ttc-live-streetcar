@@ -1,0 +1,657 @@
+.panel {
+  width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--orb-border);
+  background: var(--orb-bg);
+  overflow-y: auto;
+}
+
+.panelCollapsed {
+  width: 68px;
+  overflow: hidden;
+}
+
+.mobileCollapseBtn {
+  display: none;
+}
+
+.collapsedRail {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0.45rem;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--orb-surface) 42%, transparent),
+    transparent 35%
+  );
+}
+
+.expandBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 104px;
+  padding: 0.75rem 0.35rem;
+  color: var(--orb-text);
+  background: var(--orb-surface);
+  border: 1px solid var(--orb-border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, transform 0.12s;
+}
+
+.expandBtn:hover {
+  background: var(--orb-surface-hover);
+  border-color: var(--orb-accent-light);
+  transform: translateX(1px);
+}
+
+.expandIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: hsla(224, 60%, 55%, 0.12);
+  color: var(--orb-accent-light);
+}
+
+.expandLabel {
+  font-family: var(--orb-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orb-muted);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.collapsedStats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.collapsedStat,
+.collapsedStatMuted {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid var(--orb-border);
+  background: var(--orb-surface);
+  font-family: var(--orb-mono);
+  font-size: 0.58rem;
+}
+
+.collapsedStat {
+  color: var(--orb-accent-light);
+}
+
+.collapsedStatMuted {
+  color: var(--orb-muted);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0.75rem 0.75rem;
+  border-bottom: 1px solid var(--orb-border);
+  flex-shrink: 0;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.panelCollapsed .header {
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.panelCollapsed .heading {
+  display: none;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.heading {
+  font-family: var(--orb-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orb-muted);
+}
+
+.headingGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.selectedCount {
+  font-family: var(--orb-mono);
+  font-size: 0.6rem;
+  color: var(--orb-accent-light);
+  background: hsla(224, 60%, 55%, 0.12);
+  border: 1px solid hsla(224, 60%, 55%, 0.2);
+  border-radius: 3px;
+  padding: 1px 5px;
+  flex-shrink: 0;
+  min-width: 16px;
+  text-align: center;
+}
+
+.selectAll {
+  font-family: var(--orb-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orb-accent-light);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+.selectAll:hover {
+  color: var(--orb-text);
+}
+
+.collapseBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  border-radius: var(--orb-radius);
+  cursor: pointer;
+  color: var(--orb-muted);
+  padding: 0;
+  flex-shrink: 0;
+}
+.collapseBtn:hover {
+  background: var(--orb-surface-hover);
+  color: var(--orb-text);
+}
+
+.collapseIconFlipped {
+  transform: rotate(180deg);
+}
+
+.list {
+  list-style: none;
+  padding: 0.5rem 0.75rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.routeItem {
+  position: relative;
+}
+
+.pillRow {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.panelCollapsed .list {
+  display: none;
+}
+
+.pill {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.75rem;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: var(--orb-radius);
+  cursor: pointer;
+  color: var(--orb-muted);
+  font-family: var(--orb-font);
+  font-size: 0.82rem;
+  text-align: left;
+  transition: background 0.12s, color 0.12s;
+}
+.pill:hover {
+  background: var(--orb-surface-hover);
+  color: var(--orb-text);
+}
+
+.pillActive {
+  background: var(--orb-surface);
+  border-color: var(--orb-border);
+  box-shadow: inset 3px 0 0 var(--route-color, var(--orb-accent));
+  color: var(--orb-text);
+}
+
+.pillActive .routeNum {
+  color: var(--route-color, var(--orb-accent-light));
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--orb-muted);
+  opacity: 0.5;
+}
+.pillActive .dot {
+  opacity: 1;
+}
+
+.routeNum {
+  font-family: var(--orb-mono);
+  font-size: 0.75rem;
+  color: inherit;
+  flex-shrink: 0;
+}
+
+.routeName {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.directionTag {
+  font-family: var(--orb-mono);
+  font-size: 0.62rem;
+  color: var(--orb-accent-light);
+  background: hsla(224, 60%, 55%, 0.1);
+  border: 1px solid hsla(224, 60%, 55%, 0.18);
+  border-radius: 999px;
+  padding: 1px 6px;
+  flex-shrink: 0;
+}
+
+.directionTrigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  border: 1px solid var(--orb-border);
+  border-radius: 999px;
+  background: var(--orb-surface);
+  color: var(--orb-muted);
+  font-family: var(--orb-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.directionTrigger:hover {
+  color: var(--orb-text);
+  border-color: var(--orb-accent-light);
+}
+
+.directionTriggerActive {
+  color: var(--orb-accent-light);
+  border-color: var(--orb-accent-light);
+}
+
+.count {
+  font-family: var(--orb-mono);
+  font-size: 0.65rem;
+  color: var(--orb-accent-light);
+  background: hsla(224, 60%, 55%, 0.12);
+  border: 1px solid hsla(224, 60%, 55%, 0.2);
+  border-radius: 3px;
+  padding: 1px 5px;
+  flex-shrink: 0;
+  min-width: 18px;
+  text-align: center;
+}
+
+.directionMenu {
+  position: absolute;
+  top: calc(100% + 0.3rem);
+  right: 0;
+  z-index: 20;
+  min-width: 156px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.35rem;
+  background: color-mix(in srgb, var(--orb-bg) 96%, transparent);
+  border: 1px solid var(--orb-border);
+  border-radius: 10px;
+  box-shadow: var(--orb-shadow), 0 10px 28px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+}
+
+.directionMenuHeader {
+  padding: 0.2rem 0.35rem 0.35rem;
+  font-family: var(--orb-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orb-muted);
+}
+
+.directionOption {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--orb-text);
+  text-align: left;
+  font-family: var(--orb-font);
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.directionOption:hover {
+  background: var(--orb-surface-hover);
+}
+
+.directionOptionActive {
+  background: var(--orb-surface);
+  border-color: var(--orb-border);
+  color: var(--orb-accent-light);
+}
+
+.directionCheck {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 4px;
+  border: 1px solid var(--orb-border);
+  background: color-mix(in srgb, var(--orb-surface) 85%, transparent);
+  font-family: var(--orb-mono);
+  font-size: 0.66rem;
+  flex-shrink: 0;
+}
+
+/* ── Mobile-only collapsed dots (hidden on desktop) ─────── */
+.collapsedMobileDots {
+  display: none;
+}
+
+.collapsedMobileDot {
+  display: none;
+}
+
+/* ── Layers section ──────────────────────────────────────── */
+.layersSection {
+  padding: 0.75rem 0.75rem 0.85rem;
+  border-top: 1px solid var(--orb-border);
+  margin-top: auto;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.layersHeading {
+  font-family: var(--orb-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orb-muted);
+}
+
+.layerToggles {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.layerBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.6rem;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: var(--orb-radius);
+  cursor: pointer;
+  color: var(--orb-muted);
+  font-family: var(--orb-font);
+  font-size: 0.78rem;
+  text-align: left;
+  transition: background 0.12s, color 0.12s;
+}
+.layerBtn:hover {
+  background: var(--orb-surface-hover);
+  color: var(--orb-text);
+}
+
+.layerBtnActive {
+  background: var(--orb-surface);
+  border-color: var(--orb-border);
+  color: var(--orb-accent-light);
+}
+
+.layerIcon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.layerLabel {
+  flex: 1;
+}
+
+/* ── Mobile ───────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  /* Side panel → horizontal bottom strip */
+  .panel,
+  .panelCollapsed {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-top: 1px solid var(--orb-border);
+    overflow-y: visible;
+    flex-direction: column;
+  }
+
+  .mobileCollapseBtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.55rem 1rem 0.45rem;
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--orb-surface) 38%, transparent),
+      transparent 85%
+    );
+    border: none;
+    border-bottom: 1px solid var(--orb-border);
+    color: var(--orb-muted);
+    cursor: pointer;
+  }
+
+  .mobileCollapseHandle {
+    display: block;
+    width: 2.25rem;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--orb-border);
+    flex-shrink: 0;
+  }
+
+  .mobileCollapseText {
+    font-family: var(--orb-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orb-muted);
+    margin-left: auto;
+  }
+
+  .mobileCollapseIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 999px;
+    background: var(--orb-surface);
+    border: 1px solid var(--orb-border);
+    color: var(--orb-text);
+    transform: rotate(-90deg);
+    flex-shrink: 0;
+  }
+
+  .header {
+    display: none;
+  }
+
+  /* Collapsed rail becomes a full-width tap target on mobile */
+  .collapsedRail {
+    flex-direction: row;
+    padding: 0.6rem 1rem;
+    gap: 0.75rem;
+    min-height: 52px;
+    cursor: pointer;
+  }
+
+  .expandBtn {
+    width: auto;
+    min-height: 36px;
+    flex-direction: row;
+    padding: 0.4rem 0.6rem;
+    flex: 1;
+  }
+
+  .expandLabel {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+
+  .collapsedStats {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Active-route colour dots in collapsed mobile bar */
+  .collapsedMobileDots {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    padding: 0 1rem 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .collapsedMobileDot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .list {
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    /* leave room at edges so last chip isn't clipped */
+    padding: 0.5rem 1rem;
+    padding-right: 1.5rem;
+    gap: 6px;
+    /* hide scrollbar */
+    scrollbar-width: none;
+  }
+
+  .list::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Never collapse on mobile */
+  .panelCollapsed .list {
+    display: flex;
+  }
+
+  /* Taller touch targets, no wrapping */
+  .pill {
+    flex: none;
+    min-height: 44px;
+    padding: 0 0.6rem;
+    gap: 7px;
+  }
+
+  /* Hide text labels — just dot + route number */
+  .routeName,
+  .count {
+    display: none;
+  }
+
+  .directionTag {
+    display: none;
+  }
+
+  /* Direction trigger: bigger icon touch target on mobile */
+  .directionTrigger {
+    padding: 5px 7px;
+    font-size: 0.56rem;
+  }
+
+  .routeItem {
+    flex-shrink: 0;
+  }
+
+  /* On mobile, pillRow is part of the horizontal scroll list */
+  .pillRow {
+    flex-shrink: 0;
+    align-items: stretch;
+  }
+
+  .directionMenu {
+    position: static;
+    margin-top: 0.35rem;
+    min-width: 0;
+    width: 100%;
+    box-shadow: var(--orb-shadow);
+    backdrop-filter: none;
+  }
+
+  .routeNum {
+    font-size: 0.8rem;
+  }
+
+  .dot {
+    width: 9px;
+    height: 9px;
+  }
+}

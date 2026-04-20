@@ -1,0 +1,90 @@
+/* Leaflet overrides for the TTC streetcar tool — Orbital dark mode */
+
+.leaflet-container {
+  background: #0c0c0e;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #161618 !important;
+  color: #dfe0e2 !important;
+  border: 1px solid hsla(224, 30%, 50%, 0.15) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.55) !important;
+}
+
+.leaflet-popup-tip {
+  background: #161618 !important;
+}
+
+.leaflet-popup-content {
+  margin: 10px 14px !important;
+}
+
+.leaflet-control-zoom a {
+  background: #161618 !important;
+  color: #dfe0e2 !important;
+  border-color: hsla(224, 30%, 50%, 0.15) !important;
+  border-radius: 0 !important;
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+  border-radius: 4px !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: hsla(224, 30%, 50%, 0.15) !important;
+}
+
+.leaflet-control-zoom {
+  border: 1px solid hsla(224, 30%, 50%, 0.15) !important;
+  border-radius: 4px !important;
+  overflow: hidden;
+}
+
+.leaflet-control-attribution {
+  background: rgba(12, 12, 14, 0.8) !important;
+  color: #555 !important;
+  font-size: 10px !important;
+}
+
+.leaflet-control-attribution a {
+  color: #777 !important;
+}
+
+@media (prefers-color-scheme: light) {
+  .leaflet-container {
+    background: #e8e8ea;
+  }
+
+  .leaflet-popup-content-wrapper {
+    background: #ffffff !important;
+    color: #1c1d21 !important;
+    border: 1px solid hsla(224, 20%, 50%, 0.18) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+  }
+
+  .leaflet-popup-tip {
+    background: #ffffff !important;
+  }
+
+  .leaflet-control-zoom a {
+    background: #ffffff !important;
+    color: #1c1d21 !important;
+    border-color: hsla(224, 20%, 50%, 0.2) !important;
+  }
+
+  .leaflet-control-zoom a:hover {
+    background: hsla(224, 20%, 50%, 0.1) !important;
+  }
+
+  .leaflet-control-zoom {
+    border-color: hsla(224, 20%, 50%, 0.2) !important;
+  }
+
+  .leaflet-control-attribution {
+    background: rgba(247, 247, 248, 0.9) !important;
+    color: #888 !important;
+  }
+}

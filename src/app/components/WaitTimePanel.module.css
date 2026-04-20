@@ -1,0 +1,221 @@
+.panel {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 500;
+  background: color-mix(in srgb, var(--orb-bg) 94%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--orb-border);
+  border-radius: var(--orb-radius);
+  box-shadow: var(--orb-shadow), 0 8px 32px rgba(0, 0, 0, 0.6);
+  min-width: 300px;
+  max-width: 360px;
+  width: max-content;
+  font-family: var(--orb-font);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--orb-border);
+  background: var(--orb-surface);
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.routeDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.stopTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--orb-text);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.clearBtn {
+  background: none;
+  border: 1px solid var(--orb-border);
+  color: var(--orb-muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+  line-height: 1;
+  padding: 2px 7px;
+  border-radius: 3px;
+  transition:
+    color 0.12s,
+    border-color 0.12s;
+  flex-shrink: 0;
+}
+.clearBtn:hover {
+  color: var(--orb-text);
+  border-color: var(--orb-muted);
+}
+
+.walkRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.35rem 0.75rem;
+  background: var(--orb-surface);
+  border-bottom: 1px solid var(--orb-border);
+  gap: 0.5rem;
+}
+
+.walkLabel {
+  font-family: var(--orb-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  color: var(--orb-muted);
+}
+
+.walkTime {
+  font-family: var(--orb-mono);
+  font-size: 0.75rem;
+  color: var(--orb-text);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.arrivalsList {
+  max-height: 174px;
+  overflow-y: auto;
+  padding: 0.4rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--orb-border) transparent;
+}
+
+.arrivalsList::-webkit-scrollbar {
+  width: 4px;
+}
+.arrivalsList::-webkit-scrollbar-track {
+  background: transparent;
+}
+.arrivalsList::-webkit-scrollbar-thumb {
+  background: var(--orb-border);
+  border-radius: 2px;
+}
+
+.arrivalRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--orb-radius);
+  background: var(--orb-surface);
+  border: 1px solid var(--orb-border);
+  transition: background 0.12s;
+}
+.arrivalRow:hover {
+  background: var(--orb-surface-hover);
+}
+
+.arrivalIndex {
+  font-family: var(--orb-mono);
+  font-size: 0.65rem;
+  color: var(--orb-muted);
+  width: 14px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.arrivalMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.arrivalTime {
+  font-size: 0.8rem;
+  color: var(--orb-text);
+  font-weight: 500;
+}
+
+.arrivalDetail {
+  font-family: var(--orb-mono);
+  font-size: 0.65rem;
+  color: var(--orb-muted);
+}
+
+.badge {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-weight: 700;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--orb-radius);
+  min-width: 58px;
+}
+
+.badgeMain {
+  font-size: 0.78rem;
+  line-height: 1.2;
+}
+
+.badgeSub {
+  font-size: 0.58rem;
+  font-weight: 400;
+  opacity: 0.75;
+  line-height: 1.2;
+}
+
+.comfortable {
+  background: hsla(142, 60%, 35%, 0.25);
+  color: var(--orb-success);
+  border: 1px solid hsla(142, 60%, 40%, 0.3);
+}
+
+.neutral {
+  background: hsla(38, 70%, 40%, 0.2);
+  color: hsl(38, 85%, 65%);
+  border: 1px solid hsla(38, 70%, 45%, 0.3);
+}
+
+.urgent {
+  background: hsla(0, 70%, 45%, 0.2);
+  color: var(--orb-error);
+  border: 1px solid hsla(0, 70%, 45%, 0.3);
+}
+
+.hint {
+  font-family: var(--orb-mono);
+  font-size: 0.72rem;
+  color: var(--orb-muted);
+  padding: 0.4rem 0;
+  margin: 0;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .panel {
+    bottom: 0.75rem;
+    min-width: 240px;
+    max-width: calc(100vw - 2rem);
+  }
+}
