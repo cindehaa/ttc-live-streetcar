@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   title: 'TTC Streetcar Tracker',
   description: 'Live Toronto streetcar locations updated in real time.',
   metadataBase: new URL(site),
+  icons: {
+    icon: '/icon.svg',
+    shortcut: '/icon.svg',
+  },
   openGraph: {
     title: 'TTC Streetcar Tracker',
     description: 'Live Toronto streetcar locations updated in real time.',
